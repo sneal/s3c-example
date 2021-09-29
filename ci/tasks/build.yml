@@ -1,0 +1,8 @@
+---
+platform: linux
+
+inputs:
+- name: s3c-repo
+
+run:
+  path: s3c-repo/ci/tasks/build.sh

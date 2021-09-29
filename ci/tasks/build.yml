@@ -4,5 +4,8 @@ platform: linux
 inputs:
 - name: s3c-repo
 
+outputs:
+- name: s3c-binary
+
 run:
   path: s3c-repo/ci/tasks/build.sh

@@ -2,6 +2,7 @@
 
 set -eux
 
-echo 'Hello build'
-#go version
-#go build ../../.
+pushd s3c-repo
+go version
+go build -o s3c-binary/s3c-example .
+popd

@@ -1,5 +1,4 @@
-FROM docker.io/library/golang:1.17.1
+FROM harbor.plat-svcs.pez.vmware.com/library/alpine:3.14
 
-WORKDIR /app
-RUN go build -o /usr/local/bin/s3c-example .
-CMD s3c-example
+COPY ./s3c-binary/s3c-example /usr/local/bin 
+ENTRYPOINT ["s3c-example"]

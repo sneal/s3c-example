@@ -3,6 +3,8 @@ resources:
   type: registry-image
   source:
     repository: harbor.plat-svcs.pez.vmware.com/library/s3c-example-ci
+    username: ((registry-username))
+    password: ((registry-password))
 
 - name: s3c-repo
   type: git
@@ -16,6 +18,11 @@ jobs:
   - in_parallel:
     - get: s3c-example-ci-image
     - get: s3c-repo
-  - task: hello-world-task
+  - task: compile
     image: s3c-example-ci-image
+    file: s3c-repo/ci/tasks/compile.yml
+  - task: build-image
+    privileged: true
     file: s3c-repo/ci/tasks/build.yml
+    params:
+      DOCKERFILE: s3c-repo/Dockerfile

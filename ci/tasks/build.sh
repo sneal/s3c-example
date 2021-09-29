@@ -2,7 +2,7 @@
 
 set -eux
 
-pushd s3c-repo
-go version
-go build -o s3c-binary/s3c-example .
-popd
+cp s3c-repo/ci/harbor.crt /usr/local/share/ca-certificates/harbor.crt
+cat /usr/local/share/ca-certificates/harbor.crt >> /etc/ssl/certs/ca-certificates.crt
+
+build

@@ -11,7 +11,7 @@ resources:
     uri: git@github.com:sneal/s3c-example.git
 
 jobs:
-- name: hello-world-job
+- name: build
   plan:
   - in_parallel:
     - get: s3c-example-ci-image

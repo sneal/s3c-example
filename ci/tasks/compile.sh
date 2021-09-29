@@ -4,5 +4,5 @@ set -eux
 
 pushd s3c-repo
 go version
-go build -o s3c-binary/s3c-example .
+go build -o ../s3c-binary/s3c-example .
 popd

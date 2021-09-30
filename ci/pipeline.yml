@@ -38,3 +38,10 @@ jobs:
     params:
       version: 1.0.0 #TODO semver resource
       image: image/image.tar
+  - task: cosign
+    image: s3c-example-ci-image
+    file: s3c-repo/ci/tasks/cosign.yml
+    params:
+      IMAGE: image/image.tar
+      COSIGN_PASSWORD: ((cosign-password))
+      COSIGN_KEY: ((cosign-key))

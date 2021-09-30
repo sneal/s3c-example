@@ -11,7 +11,7 @@ inputs:
 - name: s3c-binary
 
 outputs:
-- name: image
+- name: s3c-image
 
 run:
   path: s3c-repo/ci/tasks/build.sh

@@ -6,6 +6,14 @@ resources:
     username: ((registry-username))
     password: ((registry-password))
 
+- name: s3c-example-image
+  type: registry-image
+  source:
+    repository: harbor.plat-svcs.pez.vmware.com/library/s3c-example
+    username: ((registry-username))
+    password: ((registry-password))
+  
+
 - name: s3c-repo
   type: git
   source:
@@ -26,3 +34,7 @@ jobs:
     file: s3c-repo/ci/tasks/build.yml
     params:
       DOCKERFILE: s3c-repo/Dockerfile
+  - put: s3c-example-image
+    params:
+      version: 1.0.0 #TODO semver resource
+      image: image/image.tar

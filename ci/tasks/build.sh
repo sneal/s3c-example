@@ -7,5 +7,5 @@ cat /usr/local/share/ca-certificates/harbor.crt >> /etc/ssl/certs/ca-certificate
 
 build
 
-mkdir s3c-image
+mkdir -p s3c-image
 mv image/* s3c-image/
